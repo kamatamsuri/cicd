@@ -40,7 +40,7 @@
 				         <environment>Sandbox</environment>
 				         <workerType>Micro</workerType>
 				         <workers>1</workers>
-				         <uri>https://anypoint.mulesoft.com</uri>
+				         <uri>https://anypoint.mulesoft.com</uri>;
 				         <applicationName>app-add</applicationName>
 				    </cloudHubDeployment>
 				</configuration>
