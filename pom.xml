@@ -25,43 +25,27 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-                    <copyToAppsDirectory>true</copyToAppsDirectory>
+				    <cloudHubDeployment>
+				         <muleVersion>${app.runtime}</muleVersion>
+				         <username>team555</username>
+				         <password>Savvy555</password>
+				         <environment>Sandbox</environment>
+				         <workerType>Micro</workerType>
+				         <workers>1</workers>
+				         <uri>https://anypoint.mulesoft.com</uri>
+				         <applicationName>app-add</applicationName>
+				    </cloudHubDeployment>
 				</configuration>
+				<executions>
+				    <execution>
+				        <id>deploy</id>
+				        <phase>deploy</phase>
+				        <goals>
+				           <goal>deploy</goal>
+				        </goals>
+				    </execution>
+				</executions>
 			</plugin>
-			<plugin>
-            <groupId>org.mule.tools.maven</groupId>
-            <artifactId>mule-maven-plugin</artifactId>
-            <version>2.3.2</version>
-            <configuration>
-		        <cloudHubDeployment>
-		            <uri>https://anypoint.mulesoft.com</uri>
-		            <muleVersion>${mule.version}</muleVersion>
-		            <username>${anypoint.username}</username>
-		            <password>${anypoint.password}</password>
-		            <applicationName>mulesoft-jenkins-ci-cd</applicationName>
-		            <environment>${anypoint.environment}</environment>
-		            <properties>
-		                <key>value</key>
-		            </properties>
-		        </cloudHubDeployment>
-		    </configuration>
-           	<executions>
-               <execution>
-                  <id>deploy</id>
-                  <phase>deploy</phase>
-                  <goals>
-                     <goal>deploy</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <configuration>
-               <skip>true</skip>
-            </configuration>
-         </plugin>
 		</plugins>
 	</build>
 
